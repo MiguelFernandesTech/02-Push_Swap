@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 10:41:47 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/06 12:23:15 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:31:31 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	check_order(t_stack *s)
 {
 	int	check;
-	int		i;
+	int	i;
 
 	i = s->size_a - 1;
 	check = 0;
@@ -30,6 +30,7 @@ int	check_order(t_stack *s)
 	check += 1;
 	return (check);
 }
+
 //Function to convert into index to deal with negative;
 void	indexing(t_stack *s, int *temp)
 {
@@ -37,7 +38,6 @@ void	indexing(t_stack *s, int *temp)
 	int	j;
 
 	i = 0;
-	
 	while (i < s->size_a)
 	{
 		j = 0;
@@ -69,9 +69,8 @@ void	max_min_val(t_stack *s)
 	s->min = s->stack_a[0];
 	while (s->i < s->size_a)
 	{
-		if(s->min < s->stack_a[s->i])
+		if (s->min > s->stack_a[s->i])
 			s->min = s->stack_a[s->i];
 		s->i++;
 	}
 }
-

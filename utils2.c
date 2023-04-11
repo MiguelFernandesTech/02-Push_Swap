@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:07:48 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/06 09:05:10 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:31:32 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	print_stacks(t_stack *s)
 	ft_printf("%s", "stack A :");
 	while (i < s->size_a)
 	{
-
 		ft_printf("%d ", s->stack_a[i]);
 		i++;
 	}
@@ -61,4 +60,11 @@ void	fill_stacks(int ac, char **av, t_stack *s)
 		i++;
 		j++;
 	}
+}
+
+// Sort_2 aqui por falta de espaco
+void	sort_2(t_stack *s)
+{
+	if (s->stack_a[0] > s->stack_a[1])
+		sa(s);
 }

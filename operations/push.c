@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 10:09:52 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/06 10:23:56 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:17:41 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ void	pb(t_stack *s)
 		s->stack_b[s->i++] = temp_b[s->j++];
 	s->i = 0;
 	s->j = 1;
-	while(s->i < s->size_a)
+	while (s->i < s->size_a)
 		s->stack_a[s->i++] = temp_a[s->j++];
 	free(temp_a);
 	free(temp_b);
+	printf("pb\n");
 }
 
 //Take the first element at the top of b and put it as the top of a;
@@ -70,8 +71,9 @@ void	pa(t_stack *s)
 		s->stack_a[s->i++] = temp_a[s->j++];
 	s->i = 0;
 	s->j = 1;
-	while(s->i < s->size_a)
+	while (s->i < s->size_a)
 		s->stack_b[s->i++] = temp_b[s->j++];
 	free(temp_a);
 	free(temp_b);
+	printf("pa\n");
 }

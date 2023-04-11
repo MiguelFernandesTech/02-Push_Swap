@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:54:00 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/05 11:39:01 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:16:45 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	rra(t_stack *s)
 		s->i--;
 	}
 	s->stack_a[0] = begin;
-	printf("\n");
+	printf("rra\n");
 }
 
 //the last element becomes the first one;
@@ -41,7 +41,7 @@ void	rrb(t_stack *s)
 		s->i--;
 	}
 	s->stack_a[0] = begin;
-	printf("\n");
+	printf("rrb\n");
 }
 
 //rra and rrb at the same time;

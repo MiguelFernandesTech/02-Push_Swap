@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_operations.c                                  :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:54:09 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/06 12:17:27 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:17:13 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	sa(t_stack *s)
 	temp = s->stack_a[0];
 	s->stack_a[0] = s->stack_a[1];
 	s->stack_a[1] = temp;
+	printf("sa\n");
 }
 
 //Swap the first 2 elements at the top of stack b,
@@ -35,6 +36,7 @@ void	sb(t_stack *s)
 	temp = s->stack_b[0];
 	s->stack_b[0] = s->stack_b[1];
 	s->stack_b[1] = temp;
+	printf("sb\n");
 }
 
 //sa and sb at the same time;

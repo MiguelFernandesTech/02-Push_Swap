@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:54:42 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/06 12:19:48 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:08:34 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	sort_3(t_stack *s);
 void	final_sort5(t_stack *s);
 void	sort_5(t_stack *s);
 void	sorting_bits(t_stack *s);
-void	sort_b(t_stack *s);
+void	sort_b(t_stack *s, int shift);
 // ****** VALUES **** //
 int		check_order(t_stack *s);
 void	indexing(t_stack *s, int *temp);

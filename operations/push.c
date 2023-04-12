@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 10:09:52 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/11 15:17:41 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:41:22 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	pa(t_stack *s)
 	int	*temp_a;
 	int	*temp_b;
 
-	if (s->size_b < 1)
+	if (s->size_b <= 0)
 		return ;
 	temp_a = ft_memalloc(s->size_a);
 	temp_b = ft_memalloc(s->size_b);
@@ -71,7 +71,7 @@ void	pa(t_stack *s)
 		s->stack_a[s->i++] = temp_a[s->j++];
 	s->i = 0;
 	s->j = 1;
-	while (s->i < s->size_a)
+	while (s->i < s->size_b)
 		s->stack_b[s->i++] = temp_b[s->j++];
 	free(temp_a);
 	free(temp_b);

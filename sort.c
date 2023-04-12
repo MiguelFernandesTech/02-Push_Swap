@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:25:04 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/11 15:14:45 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:22:41 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_3(t_stack *s)
 {
 	max_min_val(s);
-	if (check_order(s) == 0)
+	if (!check_order_asc(s))
 	{
 		if (s->stack_a[0] > s->stack_a[1] && s->stack_a[0] < s->stack_a[2])
 			sa(s);
@@ -23,7 +23,8 @@ void	sort_3(t_stack *s)
 			ra(s);
 		else if (s->stack_a[0] < s->stack_a[1] && s->stack_a[0] < s->stack_a[2])
 			rra(s);
-		return (sort_3(s));
+		sort_3(s);
+		return ;
 	}
 }
 
@@ -47,7 +48,7 @@ void	final_sort5(t_stack *s)
 void	sort_5(t_stack *s)
 {
 	max_min_val(s);
-	if (check_order(s) == 0)
+	if (!check_order_asc(s))
 	{
 		while (s->size_a != 3)
 		{
@@ -71,22 +72,22 @@ void	sort_5(t_stack *s)
 void	sorting_bits(t_stack *s)
 {
 	int	size;
-	int	max_num;
 	int	max_bits;
 	int i;
 	int j;
 
 	size = s->size_a;
-	max_num = size - 1;
 	max_bits = 0;
+	ft_indexing(s);
 	max_min_val(s);
 	i = 0;
 	while ((s->max >> max_bits) !=0)
 		max_bits++;
-	while (i < max_bits)
+	while (i < max_bits && (!check_order_asc(s)) && s->size_a)
 	{
+		size = s->size_a;
 		j = 0;
-		while (j < size)
+		while (j < size && (!check_order_asc(s)) && s->size_a)
 		{
 			if (((s->stack_a[0] >> i) & 1) == 1)
 				ra(s);
@@ -104,7 +105,12 @@ void	sort_b(t_stack *s, int shift)
 	int	i;
 	int	size;
 
-
+	if (check_order_des(s->stack_b, s->size_b) && (check_order_asc(s)))
+	{
+		while (s->size_b > 0)
+			pa(s);
+		return ;
+	}
  	size =	s->size_b;
 	i = 0;
 	while (i < size && s->size_b)

@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:54:05 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/11 15:29:05 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:34:54 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ra(t_stack *s)
 		s->stack_a[i] = s->stack_a[i + 1];
 		i++;
 	}
-	s->stack_a[i] = last;
+	s->stack_a[s->size_a - 1] = last;
 	printf("ra\n");
 }
 
@@ -37,12 +37,12 @@ void	rb(t_stack *s)
 
 	last = s->stack_b[0];
 	i = 0;
-	while (i <= s->size_b - 1)
+	while (i < s->size_b - 1)
 	{
 		s->stack_b[i] = s->stack_b[i + 1];
 		i++;
 	}
-	s->stack_b[i] = last;
+	s->stack_b[s->size_b - 1] = last;
 	printf("rb\n");
 }
 

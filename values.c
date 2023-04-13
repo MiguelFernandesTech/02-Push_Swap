@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 10:41:47 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/12 17:27:23 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 09:32:35 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	check_order_asc(t_stack *s)
 	check = 0;
 	while (i > 0)
 	{
-		// printf("%d\n", stack[i]);
 		if (s->stack_a[i] > s->stack_a[i - 1])
 			i--;
 		else
@@ -57,7 +56,6 @@ void	converter(t_stack *s, int *temp)
 	int	i;
 	int	j;
 
-	//temp = malloc(sizeof(int) * s->size_a);
 	i = 0;
 	while (i < s->size_a)
 	{
@@ -91,14 +89,14 @@ void	indexing(t_stack *stack)
 		if (temp[i] > temp[i + 1])
 		{
 			tempo = temp[i];
-			temp[i] = temp [i + 1];
-			temp [i + 1] = tempo;
+			temp[i] = temp[i + 1];
+			temp[i + 1] = tempo;
 			i = 0;
 		}
 		else
 			i++;
 	}
-	indexing(stack, temp);
+	converter(stack, temp);
 	free (temp);
 }
 

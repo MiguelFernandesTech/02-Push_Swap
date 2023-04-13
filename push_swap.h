@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:54:42 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/12 17:27:39 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:59:20 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
+# include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
 # include <stdlib.h>
@@ -29,32 +30,32 @@ typedef struct t_stack
 	int	j;
 	int	max;
 	int	min;
-	int	med;
 }		t_stack;
 
 // ***** UTILS ***** //
 int		*ft_memalloc(int size);
 int		is_number(char c);
-int		verification(int argc, char **argv);
+int		dups_verification(int argc, char **argv);
+int		verify_nums(int argc, char **argv);
 long	ft_atol(const char *str);
-int		verify_args(int argc, char **argv);
 // ***** UTILS2 ***** //
 void	init_stacks(t_stack *s);
+int		optimal_verify(int ac, char **av, t_stack *s);
 void	fill_stacks(int ac, char **av, t_stack *s);
 void	print_stacks(t_stack *s);
-// ****** SWAP ******* //
+// ****** SWAP ****** //
 void	sa(t_stack *s);
 void	sb(t_stack *s);
 void	ss(t_stack *s);
-// ****** ROTATE ***** //
+// ***** ROTATE ***** //
 void	ra(t_stack *s);
 void	rb(t_stack *s);
 void	rr(t_stack *s);
-// ***** REVERSE ***** //
+// **** REVERSE ***** //
 void	rra(t_stack *s);
 void	rrb(t_stack *s);
 void	rrr(t_stack *s);
-// ****** PUSH ******* //
+// ****** PUSH ****** //
 void	pa(t_stack *s);
 void	pb(t_stack *s);
 // ****** SORT ****** //

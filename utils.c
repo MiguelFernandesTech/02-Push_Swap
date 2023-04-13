@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:58:12 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/05 11:56:39 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:45:18 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	is_number(char c)
 }
 
 //Verification if we have doubles;
-int	verification(int argc, char **argv)
+int	dups_verification(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -49,6 +49,40 @@ int	verification(int argc, char **argv)
 		}
 		i++;
 	}
+	return (1);
+}
+
+//Function to be only numbers;
+int	verify_nums(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if(j == 0)
+				if(argv[i][j] == '-')
+					j++;
+			if (!is_number(argv[i][j]))
+				return (0);
+			j++;
+		}
+		if (ft_atol(argv[i]) > INT_MAX || ft_atol(argv[i]) < INT_MIN)
+			return (0);
+		j = 0;
+		i++;
+	}
+	/* i = 1;
+	while (i < argc)
+	{
+		if (ft_atol(argv[i]) > INT_MAX || ft_atol(argv[i]) < INT_MIN)
+			return (0);
+		i++;
+	} */
 	return (1);
 }
 
@@ -78,34 +112,4 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (sign * res);
-}
-
-//Function to be only numbers;
-int	verify_args(int argc, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if (!is_number(argv[i][j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	if (!verification(argc, argv))
-		return (0);
-	i = 1;
-	while (i < argc)
-	{
-		if (ft_atol(argv[i]) > INT_MAX || ft_atol(argv[i]) < INT_MIN)
-			return (0);
-		i++;
-	}
-	return (1);
 }

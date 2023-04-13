@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:54:46 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/12 17:23:48 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:49:33 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	s = malloc(sizeof(t_stack));
 	init_stacks(s);
 	s->size_a = ac - 1;
-	if (verify_args(ac, av))
+	if (optimal_verify(ac, av, s))
 		fill_stacks(ac, av, s);
 	if (s->size_a == 2)
 		sort_2(s);

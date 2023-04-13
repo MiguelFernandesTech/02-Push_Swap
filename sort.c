@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:25:04 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/12 17:22:41 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 09:32:13 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,15 @@ void	sorting_bits(t_stack *s)
 {
 	int	size;
 	int	max_bits;
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	size = s->size_a;
 	max_bits = 0;
-	ft_indexing(s);
+	indexing(s);
 	max_min_val(s);
 	i = 0;
-	while ((s->max >> max_bits) !=0)
+	while ((s->max >> max_bits) != 0)
 		max_bits++;
 	while (i < max_bits && (!check_order_asc(s)) && s->size_a)
 	{
@@ -111,7 +111,7 @@ void	sort_b(t_stack *s, int shift)
 			pa(s);
 		return ;
 	}
- 	size =	s->size_b;
+	size = s->size_b;
 	i = 0;
 	while (i < size && s->size_b)
 	{

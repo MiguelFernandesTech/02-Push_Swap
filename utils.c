@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:58:12 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/13 11:45:18 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:26:00 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int	verify_nums(int argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if(j == 0)
-				if(argv[i][j] == '-')
+			if (j == 0)
+				if (argv[i][j] == '-')
 					j++;
 			if (!is_number(argv[i][j]))
 				return (0);
@@ -76,13 +76,6 @@ int	verify_nums(int argc, char **argv)
 		j = 0;
 		i++;
 	}
-	/* i = 1;
-	while (i < argc)
-	{
-		if (ft_atol(argv[i]) > INT_MAX || ft_atol(argv[i]) < INT_MIN)
-			return (0);
-		i++;
-	} */
 	return (1);
 }
 

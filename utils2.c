@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:07:48 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/13 12:04:07 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:25:27 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	init_stacks(t_stack *s)
 	s->i = 0;
 	s->j = 0;
 }
-
 
 //Function to get space for my stack and fill it with the numbers i want;
 void	fill_stacks(int ac, char **av, t_stack *s)

@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:07:48 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/13 12:25:27 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:16:32 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	init_stacks(t_stack *s)
 	s->size_b = 0;
 	s->i = 0;
 	s->j = 0;
+	s->max = 0;
+	s->min = 0;
 }
 
 //Function to get space for my stack and fill it with the numbers i want;
@@ -41,17 +43,20 @@ void	fill_stacks(int ac, char **av, t_stack *s)
 	}
 }
 
+//Last function to verify and project error message!
 int	optimal_verify(int ac, char **av, t_stack *s)
 {
 	if (!dups_verification(ac, av))
 	{
 		free(s->stack_a);
+		free(s);
 		write(2, "Error\n", 6);
 		exit(0);
 	}
 	if (!verify_nums(ac, av))
 	{
 		free(s->stack_a);
+		free(s);
 		write(2, "Error\n", 6);
 		exit(0);
 	}

@@ -6,13 +6,13 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:25:04 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/13 09:32:13 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:10:40 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_3(t_stack *s)
+/* void	sort_3(t_stack *s)
 {
 	max_min_val(s);
 	if (!check_order_asc(s))
@@ -26,22 +26,46 @@ void	sort_3(t_stack *s)
 		sort_3(s);
 		return ;
 	}
+} */
+
+void	sort_3(t_stack *s)
+{
+	max_min_val(s);
+	if (s->stack_a[1] == s->min && s->stack_a[2] == s->max)
+		sa(s);
+	else if (s->stack_a[0] == s->max && s->stack_a[2] == s->min)
+	{
+		sa(s);
+		rra(s);
+	}
+	else if (s->stack_a[0] == s->max && s->stack_a[1] == s->min)
+		ra(s);
+	else if (s->stack_a[0] == s->min && s->stack_a[1] == s->max)
+	{
+		sa(s);
+		ra(s);
+	}
+	else if (s->stack_a[1] == s->max && s->stack_a[2] == s->min)
+		rra(s);
 }
 
 //final moves for sort_5
 void	final_sort5(t_stack *s)
 {
-	if (s->stack_b[0] > s->stack_b[1])
+	if (!check_order_asc(s))
 	{
-		pa(s);
-		ra(s);
-		pa(s);
-	}
-	else
-	{
-		pa(s);
-		pa(s);
-		ra(s);
+		if (s->stack_b[0] > s->stack_b[1])
+		{
+			pa(s);
+			ra(s);
+			pa(s);
+		}
+		else
+		{
+			pa(s);
+			pa(s);
+			ra(s);
+		}
 	}
 }
 

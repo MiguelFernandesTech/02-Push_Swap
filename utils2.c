@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:07:48 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/14 15:16:32 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/15 15:32:47 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,15 @@ void	sort_2(t_stack *s)
 		sa(s);
 }
 
-//Function to print both of my stacks;
+//Norminete e' uma vergonha!
+void	specialfree(t_stack *s)
+{
+	free(s->stack_a);
+	free(s);
+	exit(0);
+}
+
+/* //Function to print both of my stacks;
 void	print_stacks(t_stack *s)
 {
 	int	i;
@@ -90,4 +98,4 @@ void	print_stacks(t_stack *s)
 		ft_printf("%d ", s->stack_b[i]);
 		i++;
 	}
-}
+} */

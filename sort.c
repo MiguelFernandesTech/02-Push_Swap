@@ -6,27 +6,11 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:25:04 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/14 15:10:40 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/15 15:32:34 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* void	sort_3(t_stack *s)
-{
-	max_min_val(s);
-	if (!check_order_asc(s))
-	{
-		if (s->stack_a[0] > s->stack_a[1] && s->stack_a[0] < s->stack_a[2])
-			sa(s);
-		else if (s->stack_a[0] > s->stack_a[1] && s->stack_a[0] > s->stack_a[2])
-			ra(s);
-		else if (s->stack_a[0] < s->stack_a[1] && s->stack_a[0] < s->stack_a[2])
-			rra(s);
-		sort_3(s);
-		return ;
-	}
-} */
 
 void	sort_3(t_stack *s)
 {
@@ -93,14 +77,12 @@ void	sort_5(t_stack *s)
 }
 
 //Function to sort by reading bits,
-void	sorting_bits(t_stack *s)
+void	sorting_bits(t_stack *s, int i)
 {
 	int	size;
 	int	max_bits;
-	int	i;
 	int	j;
 
-	size = s->size_a;
 	max_bits = 0;
 	indexing(s);
 	max_min_val(s);
@@ -124,6 +106,7 @@ void	sorting_bits(t_stack *s)
 	}
 }
 
+//predict 2 numbers after to save movements
 void	sort_b(t_stack *s, int shift)
 {
 	int	i;

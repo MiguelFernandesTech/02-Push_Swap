@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:54:42 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/14 16:38:36 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/15 15:33:43 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ long	ft_atol(const char *str);
 void	init_stacks(t_stack *s);
 int		optimal_verify(int ac, char **av, t_stack *s);
 void	fill_stacks(int ac, char **av, t_stack *s);
-void	print_stacks(t_stack *s);
+void	specialfree(t_stack *s);
+//void	print_stacks(t_stack *s); //
 // ****** SWAP ****** //
 void	sa(t_stack *s);
 void	sb(t_stack *s);
@@ -63,7 +64,7 @@ void	sort_2(t_stack *s);
 void	sort_3(t_stack *s);
 void	final_sort5(t_stack *s);
 void	sort_5(t_stack *s);
-void	sorting_bits(t_stack *s);
+void	sorting_bits(t_stack *s, int i);
 void	sort_b(t_stack *s, int shift);
 // ****** VALUES **** //
 int		check_order_asc(t_stack *s);
@@ -71,4 +72,5 @@ int		check_order_des(int *stack, int size);
 void	converter(t_stack *s, int *temp);
 void	indexing(t_stack *stack);
 void	max_min_val(t_stack *s);
+
 #endif

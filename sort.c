@@ -6,7 +6,7 @@
 /*   By: migmarti <migmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:25:04 by migmarti          #+#    #+#             */
-/*   Updated: 2023/04/15 15:32:34 by migmarti         ###   ########.fr       */
+/*   Updated: 2023/04/17 09:11:54 by migmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sort_3(t_stack *s)
 //final moves for sort_5
 void	final_sort5(t_stack *s)
 {
-	if (!check_order_asc(s))
+	if (check_order_asc(s))
 	{
 		if (s->stack_b[0] > s->stack_b[1])
 		{
